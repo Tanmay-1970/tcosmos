@@ -2,7 +2,7 @@ name: My First Workflow
 
 on:
   push:
-
+    #on push means the file will triger action on push request
 jobs:
   ascii_jobi:
     runs-on: ubuntu-latest
