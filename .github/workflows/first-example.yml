@@ -1,0 +1,16 @@
+name: My First Workflow
+  #if you dont give the name then it will show  the path of the file
+on: push
+ #here you can use multipple events also
+jobs:
+  first_jobe:
+    run-on: ubuntu-latest
+    steps:
+    - name: Welcome
+      run: echo "My First Github Action Job"
+
+    - name: List files
+      run: ls
+
+    - name: Read file
+      run: cat README.md
