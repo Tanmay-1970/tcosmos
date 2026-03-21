@@ -3,8 +3,8 @@ name: My First Workflow
 on: push
  #here you can use multipple events also
 jobs:
-  first_jobe:
-    run-on: ubuntu-latest
+  first_job:
+    runs-on: ubuntu-latest
     steps:
     - name: Welcome
       run: echo "My First Github Action Job"
