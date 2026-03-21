@@ -19,5 +19,12 @@ jobs:
     - name: List files
       run: ls -althr
 
+    - name: Read file (if exists)
+      run: |
+        if [ -f README.md]; then
+          cat README.md
+         else 
+           echo "README.md not found"
+         fi
     - name: Read file
-      run: cat README.md
+      run: cat yellow.txt
