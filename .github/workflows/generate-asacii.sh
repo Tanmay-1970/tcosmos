@@ -1,4 +1,4 @@
-name: Generate-asacii
+name: Generate-asacii with shell
 
 on:
   push:
