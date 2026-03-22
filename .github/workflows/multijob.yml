@@ -29,7 +29,7 @@ jobs:
       uses: actions/download-artifact@v6
       with:
         name: dragon-text-file      #this name is use to downlod the file on next job
-        path: dragon.txt
+        path: .
 
 
     - name: Test File Exists
