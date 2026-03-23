@@ -15,4 +15,6 @@ jobs:
       run: ls -althr
 
     - name: Executing Shell Script
-      run: ./ascili-script.sh
+      run: |
+        chmod +x ascili-script.sh 
+        ./ascili-script.sh
