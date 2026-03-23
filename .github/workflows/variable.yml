@@ -10,11 +10,11 @@ jobs:
     steps:
     - name: Docker Build
 
-      run: echo docker build -t /$CONTAINER_REGISTRY/$DOCKER_USERNAME/$IMAGE_NAME:latest
+      run: echo docker build -t /$CONTAINER_REGISTRY/${{ vars.DOCKER_USERNAME }}/$IMAGE_NAME:latest
 #or you can do ${{env.CONTAINER_REGISTRY}}/...
 
     - name: Docker Login
-      run: echo docker login --username=$DOCKER_USERNAME --password=${{ secrets.DOCKER_PASSWORD }} #this secret.doocker_pass is the secret variable that securly store on repo ---> setting ---> Secrets and variables ---> actions
+      run: echo docker login --username=${{ vars.DOCKER_USERNAME }} --password=${{ secrets.DOCKER_PASSWORD }} #this secret.doocker_pass is the secret variable that securly store on repo ---> setting ---> Secrets and variables ---> actions
 
   deploy:
     needs: docker 
@@ -22,5 +22,5 @@ jobs:
     steps:
 
     - name: Docker Build
-      run: echo docker build -t $CONTAINER_REGISTRY/$DOCKER_USERNAME/$IMAGE_NAME:latest
+      run: echo docker build -t $CONTAINER_REGISTRY/${{ vars.DOCKER_USERNAME }}/$IMAGE_NAME:latest
 
