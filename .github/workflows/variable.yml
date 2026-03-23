@@ -1,6 +1,6 @@
 name: Exploring Variables and Secret
 on:
-  Push:
+  push:
 env:
   CONTAINER_REGISTRY: docker.io
   DOCKER_USERNAME: aditya
