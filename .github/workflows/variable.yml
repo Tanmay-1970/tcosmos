@@ -3,7 +3,6 @@ on:
   push:
 env:
   CONTAINER_REGISTRY: docker.io
-  DOCKER_USERNAME: aditya
   IMAGE_NAME: github-actions-nginx
 jobs:
   docker:
@@ -11,13 +10,17 @@ jobs:
     steps:
     - name: Docker Build
 
-      run: echo docker build -t $CONTAINER_REGISTRY/$DOCKER_USERNAME/$IMAGE_NAME:latest
+      run: echo docker build -t /$CONTAINER_REGISTRY/$DOCKER_USERNAME/$IMAGE_NAME:latest
 #or you can do ${{env.CONTAINER_REGISTRY}}/...
 
+    - name: Docker Login
+      run: echo docker login --username=$DOCKER_USERNAME --password=${{ secrets.DOCKER_PASSWORD }} #this secret.doocker_pass is the secret variable that securly store on repo ---> setting ---> Secrets and variables ---> actions
+
   deploy:
-    needs: docker
+    needs: docker 
     runs-on: ubuntu-latest
     steps:
+
     - name: Docker Build
       run: echo docker build -t $CONTAINER_REGISTRY/$DOCKER_USERNAME/$IMAGE_NAME:latest
 
