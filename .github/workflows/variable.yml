@@ -1,7 +1,8 @@
 name: Exploring Variables and Secret
 on:
-  workflow_dispatch:
   push:
+  workflow_dispatch:
+  
 env:
   CONTAINER_REGISTRY: docker.io
   IMAGE_NAME: github-actions-nginx
