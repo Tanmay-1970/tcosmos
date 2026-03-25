@@ -1,0 +1,16 @@
+on:
+  push:
+
+jobs:
+   deploy:
+     strategy:
+       matrix:
+         os: [ubuntu-latest, ubuntu-20.04, windows-latest]
+         images: [hellow-world, alpine]
+     runs-on: ${{matrix.os}}
+     steps:
+     - name: Echo Docker Details
+       run: docker info
+
+     - name: Run Images on ${{matrix.os}}
+       run: docker run ${{matrix.os}}
