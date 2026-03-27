@@ -5,7 +5,7 @@ on:
 jobs:
   deploy:
      strategy:                #The strategy section defines how multiple job variations (matrix jobs) are executed.
-     fail-fast: false #If any one job fails, all other running or queued matrix jobs are cancelled immediately. True: The remaining jobs will continue running if one fail and its by-default.
+       fail-fast: false #If any one job fails, all other running or queued matrix jobs are cancelled immediately. True: The remaining jobs will continue running if one fail and its by-default.
        max-parallel: 5 #it will run 5 job at a time.
        matrix:
          os: [ubuntu-latest, ubuntu-20.04, windows-latest]
