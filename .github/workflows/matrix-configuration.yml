@@ -1,3 +1,4 @@
+name: To test matrix 
 on:
   push:
 
