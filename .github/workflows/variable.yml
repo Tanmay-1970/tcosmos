@@ -19,6 +19,7 @@ jobs:
       run: echo docker login --username=${{ vars.DOCKER_USERNAME }} --password=${{ secrets.DOCKER_PASSWORD }} #this secret.doocker_pass is the secret variable that securly store on repo ---> setting ---> Secrets and variables ---> actions
 
   deploy:
+    if: github.ref == 'refs/heads/main'
     needs: docker 
     runs-on: ubuntu-latest
     steps:
